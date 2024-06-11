@@ -1,0 +1,13 @@
+package com.example.pruebaentidadfinanciera;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class PruebaEntidadFinancieraApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(PruebaEntidadFinancieraApplication.class, args);
+    }
+
+}
