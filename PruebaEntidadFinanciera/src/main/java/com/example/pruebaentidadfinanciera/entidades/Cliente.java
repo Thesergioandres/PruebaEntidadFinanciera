@@ -5,6 +5,7 @@ import jakarta.validation.constraints.*;
 import lombok.*;
 
 import java.time.LocalDate;
+import java.time.Period;
 
 @Entity
 @AllArgsConstructor
@@ -59,13 +60,5 @@ public class Cliente {
     @Column
     private LocalDate fechaModificacion;
 
-    @PrePersist
-    protected void onCreate() {
-        this.fechaCreacion = LocalDate.now();
-    }
 
-    @PreUpdate
-    protected void onUpdate() {
-        this.fechaModificacion = LocalDate.now();
-    }
 }

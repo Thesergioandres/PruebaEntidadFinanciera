@@ -32,7 +32,7 @@ public class Producto {
     private EstadoCuenta estado;
 
     @Column(nullable = false)
-    @DecimalMin(value = "0.0", inclusive = true, message = "El saldo no puede ser negativo")
+    @DecimalMin(value = "0.0", message = "El saldo no puede ser negativo")
     private BigDecimal saldo;
 
     @Column(nullable = false)
@@ -59,7 +59,5 @@ public class Producto {
         this.fechaModificacion = LocalDate.now();
     }
 
-    public enum EstadoCuenta {
-        ACTIVA, INACTIVA, CANCELADA
-    }
+
 }
