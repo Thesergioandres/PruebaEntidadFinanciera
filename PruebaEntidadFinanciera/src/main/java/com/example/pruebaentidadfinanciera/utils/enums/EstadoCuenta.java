@@ -1,4 +1,4 @@
-package com.example.pruebaentidadfinanciera.entidades;
+package com.example.pruebaentidadfinanciera.utils.enums;
 
 public enum EstadoCuenta {
     ACTIVA, INACTIVA, CANCELADA

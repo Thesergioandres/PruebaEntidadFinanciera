@@ -29,7 +29,7 @@ public class Cliente {
 
     @Column(nullable = false)
     @NotBlank(message = "El primer nombre no puede estar vacío")
-    @Size(min = 2, message = "El primer nombre debe tener al menos 2 caracteres")
+    @Size(min = 2, message = "El primer nombre debe tener al menos 2 caracteres")//esto es para que la cantidad minima de caracteres en el campo sea 2
     private String primerNombre;
 
     @Column
@@ -46,7 +46,7 @@ public class Cliente {
     private String segundoApellido;
 
     @Column(unique = true, nullable = false)
-    @Email(message = "El correo debe ser válido")
+    @Email(message = "El correo debe ser válido")//esto es para que la informacion corresponda a un correo electronico
     @NotBlank(message = "El correo no puede estar vacío")
     private String correoElectronico;
 

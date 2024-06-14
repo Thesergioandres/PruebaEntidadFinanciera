@@ -1,5 +1,7 @@
 package com.example.pruebaentidadfinanciera.entidades;
 
+import com.example.pruebaentidadfinanciera.utils.enums.EstadoCuenta;
+import com.example.pruebaentidadfinanciera.utils.enums.TipoCuenta;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 import lombok.*;
@@ -21,7 +23,7 @@ public class Producto {
 
     @Column(nullable = false)
     @NotBlank(message = "El tipo de cuenta no puede estar vacío")
-    private String tipoCuenta;
+    private TipoCuenta tipoCuenta;
 
     @Column(unique = true, nullable = false)
     @NotBlank(message = "El número de cuenta no puede estar vacío")
@@ -48,16 +50,9 @@ public class Producto {
     @JoinColumn(name = "cliente_id", nullable = false)
     private Cliente cliente;
 
-    @PrePersist
-    protected void onCreate() {
-        this.fechaCreacion = LocalDate.now();
-        this.estado = EstadoCuenta.ACTIVA;
-    }
+    @Column(nullable = false, updatable = false)
+    private EstadoCuenta estadoCuenta;
 
-    @PreUpdate
-    protected void onUpdate() {
-        this.fechaModificacion = LocalDate.now();
-    }
 
 
 }
